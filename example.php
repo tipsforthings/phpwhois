@@ -112,9 +112,10 @@ if (isSet($_GET['query']))
 	}
 else
 	$resout = '';
-
-$out = str_replace('{ver}',$whois->CODE_VERSION,$out);
-exit(str_replace('{results}', $resout, $out));
+	$whois = array();
+	$whois['CODE_VERSION'] = '';
+	$out = str_replace('{ver}',$whois['CODE_VERSION'],$out);
+	exit(str_replace('{results}', $resout, $out));
 
 //-------------------------------------------------------------------------
 
