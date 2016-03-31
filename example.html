@@ -1,64 +1,73 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-            "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
-<head>
-<title>whois.php -base classes to do whois queries with php</title>
-<style type="text/css">
-</style>
-</head>
+﻿<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>whois.php -base classes to do whois queries with php</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <style type="text/css">
+    </style>
+  </head>
 
-<body>
-<center>
+  <body>
+    <div class="row">
+      <div class="large-8 large-centered columns">
+        <h3 class="text-center">phpWhois {ver} - base class to do whois queries with php</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-8 large-centered columns">
+      <p class="success callout text-justify">
+        &copy; 1999 - 2011 <a href="http://www.easydns.com/">easyDNS
+        Technologies Inc.</a> &amp; <a href="http://mark.jeftovic.net/">Mark Jeftovic</a><br/>
+        Now maintained and hosted by David Saez at <a href="http://www.ols.es">OLS 20000</a><br/>
+        Placed under the GPL. See the LICENSE file in the distribution.
+      </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="large-8 large-centered columns">
+        <b>Enter any domain name, ip address or AS handle you would like to query whois for</b><br /><br />
+        <form method="get" action="{self}">
+          <div class="row">
+            <div class="large-6 columns">
+              <label>Show me regular output
+                <input type="radio" name="output" value="normal" /> 
+              </label>
+              <label>Show me HTMLized output
+                <input type="radio" name="output" value="nice" checked="checked" /> 
+              </label>
+              <label>Show me the returned PHP object
+                <input type="radio" name="output" value="object" /> 
+              </label>
+                
+            </div>
+            <div class="large-6 columns">
+              <div class="input-group">
+                <input class="input-group-field" name="query" type="text">
+                <div class="input-group-button">
+                  <input type="submit" class="button" value="Whois">
+                </div>
+              </div>
+                <input type="checkbox" name="fast" value="1" /> Fast lookup
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--results-->
+    <p><b>Results for {query} :</b></p>
+    <blockquote>
+    {result}
+    </blockquote>
+    <!--/results-->
+    </div>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/vendor/what-input.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script src="js/app.js"></script>
 
-<h1>phpWhois {ver} - base class to do whois queries with php</h1>
-
-<p>
-&copy; 1999 - 2011 <a href="http://www.easydns.com/">easyDNS
-Technologies Inc.</a> &amp; <a href="http://mark.jeftovic.net/">Mark Jeftovic</a><br/>
-Now maintained and hosted by David Saez at <a href="http://www.ols.es">OLS 20000</a><br/>
-Placed under the GPL. See the LICENSE file in the distribution.
-</p>
-
-<table>
-<tr><td bgcolor="#55aaff">
-<form method="get" action="{self}">
-
-<table>
-<tr><td colspan="3" align="center">
-<b>Enter any domain name, ip address or AS handle you would like to query whois for</b>
-<br/><br/>
-<input name="query" /> <input type="submit" value="Whois" /><br/>
-</td></tr>
-
-<tr>
-<td>
-<input type="radio" name="output" value="normal" /> Show me regular output<br/>
-<input type="radio" name="output" value="nice" checked="checked" /> Show me HTMLized output<br/>
-<input type="radio" name="output" value="object" /> Show me the returned PHP object
-</td>
-
-<td align="left" valign="top">
-<input type="checkbox" name="fast" value="1" /> Fast lookup
-</td>
-
-<td align="right" valign="bottom">
-<a href="http://www.phpwhois.org" title="phpWhois web page">
-<img border="0" src="whois.icon.png" alt="phpWhois web page" /></a>
-</td>
-</tr>
-
-</table>
-</form>
-</td></tr>
-</table>
-</center>
-
-<!--results-->
-<p><b>Results for {query} :</b></p>
-<blockquote>
-{result}
-</blockquote>
-<!--/results-->
-
-</body>
+  </body>
 </html>
