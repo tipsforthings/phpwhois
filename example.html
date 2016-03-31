@@ -29,40 +29,46 @@
     </div>
     <div class="row">
       <div class="large-8 large-centered columns">
-        <b>Enter any domain name, ip address or AS handle you would like to query whois for</b><br /><br />
         <form method="get" action="{self}">
-          <div class="row">
-            <div class="large-6 columns">
-              <label>Show me regular output
-                <input type="radio" name="output" value="normal" /> 
-              </label>
-              <label>Show me HTMLized output
-                <input type="radio" name="output" value="nice" checked="checked" /> 
-              </label>
-              <label>Show me the returned PHP object
-                <input type="radio" name="output" value="object" /> 
-              </label>
-                
-            </div>
-            <div class="large-6 columns">
-              <div class="input-group">
-                <input class="input-group-field" name="query" type="text">
-                <div class="input-group-button">
-                  <input type="submit" class="button" value="Whois">
+          <fieldset class="fieldset">
+            <legend>Enter any domain name, ip address or AS handle you would like to query whois for</legend>
+            <div class="row">
+              <div class="large-6 columns">
+                <div class="input-group">
+                  <input class="input-group-field" name="query" type="text">
+                  <div class="input-group-button">
+                    <input type="submit" class="button" value="Whois">
+                  </div>
                 </div>
-              </div>
                 <input type="checkbox" name="fast" value="1" /> Fast lookup
+              </div>
+              <div class="large-6 columns">
+                <label>
+                  <select name="output" aria-describedby="outputTypeHelp">
+                    <option value="normal">Normal</option>
+                    <option value="nice" selected="selected">HTMLized</option>
+                    <option value="object">PHP Object</option>
+                  </select>
+                  <p class="help-text" id="outputTypeHelp">Please select the output type of your request.</p>
+                </label>
+              </div>
             </div>
-          </div>
+          </fieldset>
         </form>
       </div>
     </div>
-    <!--results-->
-    <p><b>Results for {query} :</b></p>
-    <blockquote>
-    {result}
-    </blockquote>
-    <!--/results-->
+    <div class="row">
+      <div class="large-8 large-centered columns">
+        <!--results-->
+        <fieldset class="fieldset">
+          <legend>
+            Results for {query} :
+          </legend>
+          {result}
+        </fieldset>
+        <!--/results-->
+      </div>
+    </div>    
     </div>
     <script src="js/vendor/jquery.min.js"></script>
     <script src="js/vendor/what-input.min.js"></script>
