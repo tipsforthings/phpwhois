@@ -42,8 +42,8 @@ if (isSet($_GET['query']))
 	else
 		$output = '';
 
-	include_once('whois.main.php');
-	include_once('whois.utils.php');
+	include_once('classes/whois.main.php');
+	include_once('classes/whois.utils.php');
 
 	$whois = new Whois();
 
