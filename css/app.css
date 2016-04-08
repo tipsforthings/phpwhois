@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+}
+h1#page-title {
+  text-align: center;
+}
+h5 {
+  text-decoration: underline;
+}
+p {
+  margin-top: 1rem;
+  text-align: center;
+}
+.button.expand {
+  display: block;
+  width: 100%;
+}
+.row .row {
+  margin: 0;
+}
+.error {
+  display: none;
+}
