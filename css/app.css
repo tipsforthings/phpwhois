@@ -30,6 +30,7 @@ p {
 }
 .fieldset {
   padding: 0.75rem;
+  border: none;
 }
 .fieldset b {
   text-indent: 1rem;
