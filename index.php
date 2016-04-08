@@ -116,7 +116,7 @@ else
 	$whois['CODE_VERSION'] = '';
 	$out = str_replace('{ver}',$whois['CODE_VERSION'],$out);
 	exit(str_replace('{results}', $resout, $out));
-
+include_once("analyticstracking.php");
 //-------------------------------------------------------------------------
 
 function extract_block (&$plantilla,$mark,$retmark='')
