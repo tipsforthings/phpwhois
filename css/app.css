@@ -1,9 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:500,600,700,400);
 body {
+  font-family: 'Source Code Pro', cursive;
   overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Source Code Pro', cursive;
+  font-weight: 700;
   text-align: center;
 }
 h1#page-title {
@@ -13,6 +15,7 @@ h5 {
   text-decoration: underline;
 }
 p {
+  font-family: 'Source Code Pro', cursive;
   margin-top: 1rem;
   text-align: center;
 }
