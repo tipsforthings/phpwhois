@@ -20,6 +20,13 @@ if(!empty($_POST['query']) && !empty($_POST['displayType'])){
        // Set result types - can be modified by using available elements from $rec array
 
        switch($type){
+              case DNS_ALL:
+                  $result = dns_get_record($host, DNS_ALL);
+                  echo '<pre>';
+                  echo "Result = ";
+                  print_r($result);
+                  echo '</pre>';
+                  return;
              case DNS_A:
                     $recvals=array("Hostname" => "host","Type" => "type", "IP" => "ip");
                     break;
@@ -41,6 +48,7 @@ if(!empty($_POST['query']) && !empty($_POST['displayType'])){
                     echo $title . " : " . $num[$value] . "\n";
              }
       }
+
       echo '</pre>';
     }
 } else {
