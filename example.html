@@ -59,22 +59,23 @@
         </div>
         <div class="row">
           <div class="large-12 columns no-padding">
-            <form method="get" action="{self}">
+            <form>
               <fieldset class="fieldset">
                 <legend>Enter any Domain Name, IP address or AS handle you would like to query Whois for.</legend>
                 <div class="row">
                   <div class="large-6 columns">
                     <div class="input-group">
-                      <input class="input-group-field" name="query" type="text">
+                      <input class="input-group-field" name="query" id="query-input" type="text">
                       <div class="input-group-button">
-                        <input type="submit" class="button" value="Whois">
+                        <input type="submit" id="submit-button" class="button" value="Whois">
                       </div>
                     </div>
-                    <input type="checkbox" name="fast" value="1" /> Fast lookup
+                      <label class="error" for="host" id="query-error">This field is required.</label>
+                    <input type="checkbox" id="fast-lookup" name="fast" /> Fast lookup
                   </div>
                   <div class="large-6 columns">
                     <label>
-                      <select name="output" aria-describedby="outputTypeHelp">
+                      <select name="output" id="display-type" aria-describedby="outputTypeHelp">
                         <option value="normal">Normal</option>
                         <option value="nice" selected="selected">HTMLized</option>
                         <option value="object">PHP Object</option>
@@ -89,14 +90,8 @@
         </div>
         <div class="row">
           <div class="large-12 columns no-padding">
-            <!--results-->
-            <fieldset class="fieldset">
-              <legend>
-                Results for {query} :
-              </legend>
-              {result}
-            </fieldset>
-            <!--/results-->
+            <div id="query-results">
+            </div>
           </div>
         </div>    
       </div>

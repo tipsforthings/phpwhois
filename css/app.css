@@ -41,3 +41,6 @@ p {
 .fieldset b {
   text-indent: 1rem;
 }
+.error {
+  display: none;
+}
