@@ -15,17 +15,25 @@ $("#submit-button").click(function(e) {
   var query = $("input#query-input").val();
   var displayType = $("select#display-type").val();
   var fastLookup = $("input#fast-lookup").is(':checked');
+  var outputType = $('select#output-type').val();
   if (query == "") {
     $("label#query-error").slideDown();
     $("input#query-input").focus();
     return false;
+  }
+  if(outputType == 'nslookup') {
+    var displayType = $("select#dns-type").val();
+    var processor = 'nslookup-results.php';
+  } else if(outputType == 'whois') {
+    var displayType = $("select#display-type").val();
+    var processor = 'whois-results.php';
   }
   $("label#query-error").slideUp();
   // alert(name + '\r\n' + type + '\r\n' + fast);
   var dataString = 'query=' + query + '&displayType=' + displayType + '&fastLookup=' + fastLookup;
     $.ajax({
       type: "POST",
-      url: "whois-results.php",
+      url: processor,
       async: true,
       data: dataString,
       success: function(res) {

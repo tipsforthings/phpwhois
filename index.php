@@ -26,17 +26,11 @@ include('inc/header.php');
             <p class="text-center">A selection of domain tools including Whois, NS Lookup, DIG and IP Locate.</p>
             <br />
         <div class="row">
-          <div class="small-6 medium-3 columns">
+          <div class="small-6 medium-6 columns">
             <h5>NS Lookup</h5>
           </div>
-          <div class="small-6 medium-3 columns">
-            <h5>Dig</h5>
-          </div>
-          <div class="small-6 medium-3 columns">
+          <div class="small-6 medium-6 columns">
             <h5>Whois</h5>
-          </div>
-          <div class="small-6 medium-3 columns">
-            <h5>IP Locate</h5>
           </div>
         </div>
         <div class="row">
