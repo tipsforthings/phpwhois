@@ -1,4 +1,14 @@
 $(document).foundation();
+  $('#output-type').change(function() {
+    var output = $(this).val();
+    $('.dinsly-hidden').slideUp( function() {
+      if(output == 'nslookup') {
+        $('#dns-type-label').delay(500).slideDown();
+      } else if(output == 'whois') {
+        $('#whois-type-label').delay(500).slideDown();
+      }
+    });
+  });
 
 $("#submit-button").click(function(e) {
   e.preventDefault();
