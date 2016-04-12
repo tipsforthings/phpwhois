@@ -19,6 +19,10 @@ p {
   margin-top: 1rem;
   text-align: center;
 }
+p.help-text {
+  text-align: left;
+  margin-bottom: 0rem;
+}
 .button.expand {
   display: block;
   width: 100%;
@@ -57,5 +61,10 @@ pre {
   display: none;
 }
 .dinsly-item {
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+@media(min-width:40.063em) {
+  .dinsly-item {
+    margin-top: 0.5rem;
+  }
 }
