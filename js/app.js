@@ -19,8 +19,7 @@ $("#submit-button").click(function(e) {
       async: true,
       data: dataString,
       success: function(res) {
-        $('#query-results').html("<div id='message'></div>");
-        $('#message').html(res)
+        $('#query-results').html(res)
         .hide()
         .fadeIn(1500, function() {
         });
