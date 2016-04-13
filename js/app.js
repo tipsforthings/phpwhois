@@ -6,16 +6,20 @@ $(document).foundation();
         $('#dns-type-label').delay(500).slideDown();
       } else if(output == 'whois') {
         $('#whois-type-label').delay(500).slideDown();
+      } else if(output == 'iplocate') {
+        $('#iplocate-type-label').delay(500).slideDown();
       }
     });
   });
 
 $("#submit-button").click(function(e) {
   e.preventDefault();
+  $('.header-row').slideUp();
   var query = $("input#query-input").val();
   var displayType = $("select#display-type").val();
   var fastLookup = $("input#fast-lookup").is(':checked');
   var outputType = $('select#output-type').val();
+  var iplocateType = $('select#iplocate-type').val();
   if (query == "") {
     $("label#query-error").slideDown();
     $("input#query-input").focus();
@@ -27,6 +31,13 @@ $("#submit-button").click(function(e) {
   } else if(outputType == 'whois') {
     var displayType = $("select#display-type").val();
     var processor = 'whois-results.php';
+  } else if(outputType == 'iplocate') {
+    var displayType = $("select#display-type").val();
+    if(iplocateType == 'maponly') {
+      var processor = 'iplocate-map.php';
+    } else if (iplocateType == 'datamap') {
+      var processor = 'iplocate-results.php';
+    }
   }
   $("label#query-error").slideUp();
   // alert(name + '\r\n' + type + '\r\n' + fast);

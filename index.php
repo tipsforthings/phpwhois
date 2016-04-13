@@ -1,6 +1,5 @@
 <?php
 
-
 include('inc/header.php');
 
 ?>
@@ -22,14 +21,19 @@ include('inc/header.php');
         <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+        <div class="row title-row" id="header-row">
+          <div class="small-12 columns">
             <h1 id="page-title">DINSLY Tools</h1>
-            <p class="text-center">A selection of domain tools including Whois, NS Lookup, DIG and IP Locate.</p>
+            <p class="text-center header-row">A selection of domain tools including Whois, NS Lookup, DIG and IP Locate.</p>
             <br />
-        <div class="row">
-          <div class="small-6 medium-6 columns">
+          </div>
+          <div class="small-4 medium-4 columns header-row">
+            <h5>IP Locate</h5>
+          </div>
+          <div class="small-4 medium-4 columns header-row">
             <h5>NS Lookup</h5>
           </div>
-          <div class="small-6 medium-6 columns">
+          <div class="small-4 medium-4 columns header-row">
             <h5>Whois</h5>
           </div>
         </div>
@@ -37,13 +41,12 @@ include('inc/header.php');
           <div class="large-12 columns no-padding">
             <form>
               <fieldset class="fieldset">
-                <legend>Enter any Domain Name, IP address or AS handle you would like to query Whois for.</legend>
                 <div class="row">
                   <div class="large-12 columns">
                     <div class="input-group">
                       <input class="input-group-field" name="query" id="query-input" type="text">
                       <div class="input-group-button">
-                        <input type="submit" id="submit-button" class="button" value="Whois">
+                        <input type="submit" id="submit-button" class="button" value="Go">
                       </div>
                     </div>
                       <label class="error" for="host" id="query-error">This field is required.</label>
@@ -53,27 +56,35 @@ include('inc/header.php');
                     <label class="dinsly-item">
                       <p class="help-text" id="outputTypeHelp">What type of search would you like to do?</p>
                       <select name="output" id="output-type" aria-describedby="outputTypeHelp">
-                        <option value="whois" selected="selected">Whois</option>
+                        <option value="iplocate">IP Locate</option>
                         <option value="nslookup">NS Lookup</option>
+                        <option value="whois" selected="selected">Whois</option>
                       </select>
                     </label>
                   </div>
                   <div class="large-6 columns selection-column">
+                    <label id="iplocate-type-label" class="hide-by-default dinsly-item dinsly-hidden">
+                      <p class="help-text" id="iplocateTypeHelp">>How should the results be displayed?</p>
+                      <select name="output" id="iplocate-type" aria-describedby="iplocateTypeHelp">
+                        <option value="datamap" selected="selected">Data + Map</option>
+                        <option value="maponly">Map Only</option>
+                      </select>
+                    </label>
                     <label id="dns-type-label" class="hide-by-default dinsly-item dinsly-hidden">
                       <p class="help-text" id="dnsTypeHelp">What type of NS Lookup?</p>
                       <select name="output" id="dns-type" aria-describedby="dnsTypeHelp">
+                        <option value="ALL" selected="selected">ALL</option>
                         <option value="A">A</option>
-                        <option value="MX" selected="selected">MX</option>
+                        <option value="MX">MX</option>
                         <option value="TXT">TXT</option>
                         <option value="NS">NS</option>
-                        <option value="ALL">ALL</option>
                       </select>
                     </label>
                     <label id="whois-type-label" class="dinsly-item dinsly-hidden">
                       <p class="help-text" id="outputTypeHelp">How should the results be displayed?</p>
                       <select name="output" id="display-type" aria-describedby="displayTypeHelp">
-                        <option value="normal">Normal</option>
                         <option value="nice" selected="selected">HTMLized</option>
+                        <option value="normal">Normal</option>
                         <option value="object">PHP Object</option>
                       </select>
                     </label>

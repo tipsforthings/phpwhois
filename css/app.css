@@ -28,12 +28,24 @@ p.help-text {
   width: 100%;
 }
 .no-padding {
-  padding: 0 !important;
+  padding: 0;
+}
+body div .no-padding,
+body div.no-padding {
+  padding: 0;
 }
 .row,
 .row .row {
   margin: 0 auto;
   max-width: 100%;
+}
+body div div#query-results-sidebar {
+  padding: 0;
+}
+.row .columns,
+.row .row .columns,
+.row .row .row .columns {
+  padding: 0;
 }
 .error {
   display: none;
@@ -41,6 +53,7 @@ p.help-text {
 .fieldset {
   padding: 0.75rem;
   border: none;
+  margin: 0;
 }
 .fieldset b {
   text-indent: 1rem;
@@ -68,3 +81,47 @@ pre {
     margin-top: 0.5rem;
   }
 }
+
+
+
+/* 
+Generic Styling, for Desktops/Laptops 
+*/
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+}
+thead {
+  display: none;
+}
+/* Zebra striping */
+tr:nth-of-type(odd) { 
+  background: #eee; 
+}
+th { 
+  background: #333; 
+  color: white; 
+  font-weight: bold; 
+}
+td, th { 
+  padding: 6px; 
+  border: 1px solid #ccc; 
+  text-align: left; 
+}
+#map_container{
+  position: relative;
+  padding-top: 24px;
+}
+@media(max-width: 40em) {
+  body div div#query-results {
+    padding: 0 1rem;
+  }
+}
+/*
+#map{
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 22.25%;
+    padding-top: 30px;
+    position: relative;
+}*/
